@@ -1,0 +1,47 @@
+.radarDiv {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+}
+
+.radarOutline {
+    margin: 0;
+    height: 53.5vh;
+    width: 53.5vh;
+    background: radial-gradient(circle at center, #ffffff, #353535);
+    border-radius: 50%;
+    border: solid 2px rgb(31, 31, 31);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radar {
+    width: calc(8em + 1.5em);
+    height: calc(8em + 1.5em);
+    background: linear-gradient(90deg, transparent 49.75%, #dbedf3 49.75%, #dbedf3 50.25%, transparent 50.25%), linear-gradient(transparent 49.75%, #dbedf3 49.75%, #dbedf3 50.25%, transparent 50.25%), repeating-radial-gradient(transparent 0, transparent 0.95em, #dbedf3 0.95em, #dbedf3 1em), linear-gradient(black, black);
+    font-size: 40px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.radar::before {
+    content: '';
+    position: absolute;
+    width: calc(8em / 2);
+    height: calc(8em / 2);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, #eeeeee 100%);
+    border-radius: 100% 0 0 0;
+    top: calc(1.5em / 2);
+    left: calc(1.5em / 2);
+    animation: scanning 5s linear infinite;
+    transform-origin: 100% 100%;
+}
+
+@keyframes scanning {
+    to {
+        transform: rotate(360deg);
+    }
+}
