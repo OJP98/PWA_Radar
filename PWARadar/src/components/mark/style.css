@@ -1,9 +1,17 @@
+.markDiv {
+    position: absolute;
+}
+
 .mark {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: lightgreen;
     position: absolute;
-    left: 50%;
-    top: 50%;
+}
+
+.userData {
+    color: lightgreen;
+    position: absolute;
+    left: 15px;
 }

@@ -36,7 +36,7 @@ export default class App extends Component {
 
 		// Lo primero que deben hacer es validar si el dispositivo soporta geolocacion
 		if ('geolocation' in navigator) {
-			// console.log('has geolocation');
+			console.log('has geolocation');
 
 			// Esta funcion va a ser un callback que va a recibir la posición del dispositivo
 			const success = position => {
@@ -64,7 +64,7 @@ export default class App extends Component {
 			};
 
 			const error = err => {
-				console.log('error', err);
+				console.log('Error en el geolacation del navegador:', err);
 
 				/*
 					El error tiene dos valores, un código de error y un texto
@@ -83,7 +83,7 @@ export default class App extends Component {
 				error,  // esta se va a llamar si no
 				{ // estos parametros son para configurar la medida
 					maximumAge: 1000000,  // esto controla la cache de las mediciones, no necesitan cambiarlo
-					timeout: 1000, // si la medida toma un tiempo mayor a este parametro, se va a generar el error 3
+					timeout: 3000, // si la medida toma un tiempo mayor a este parametro, se va a generar el error 3
 					enableHighAccurancy: true // highAccurancy gasta mas bateria y toma mas tiempo, pero tiene mejor accurancy
 				}
 			);
@@ -121,6 +121,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<div id="app">
+				<meta name="viewport" content="width=device-width" />
 				<noscript>
 					<h2>La ejecución de Javascript se encuentra deshabilitada</h2>
 				</noscript>
@@ -134,7 +135,7 @@ export default class App extends Component {
 				/>
 				<Header />
 				<Router onChange={this.handleRoute}>
-					<Home path="/" />
+					<Home path="/" updatedUsers={this.state.updatedUsers} currentPosition={this.state.currentPosition} />
 				</Router>
 			</div>
 		);
