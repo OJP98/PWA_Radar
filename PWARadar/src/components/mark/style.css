@@ -3,15 +3,61 @@
 }
 
 .mark {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background-color: lightgreen;
+    background-color: red;
     position: absolute;
 }
 
 .userData {
-    color: lightgreen;
+    color: yellow;
     position: absolute;
-    left: 15px;
+    left: 10px;
+}
+
+.dotContainer {
+    height: 30px;
+    width: 30px;
+    margin: auto;
+    position: relative;
+}
+
+.dotContainer .dot {
+    height: 25px;
+    width: 25px;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+    background-color: #3286C8;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    animation: pulse 2s ease 3 normal, size 1s linear 1 alternate;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        background-color: #3286C8;
+    }
+    50% {
+        background-color: #0C5188;
+    }
+}
+
+@keyframes size {
+    0% {
+        transform: scale(0) translate(0, 0) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1) translate(0, -15px) rotate(-45deg);
+    }
+    80% {
+        transform: translate(0, 0) rotate(-45deg);
+    }
+    90% {
+        transform: translate(0, -10px) rotate(-45deg);
+    }
+    100% {
+        transform: scale(1) translate(0, 0) rotate(-45deg);
+    }
 }

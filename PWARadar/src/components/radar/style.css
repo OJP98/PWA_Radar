@@ -8,8 +8,8 @@
 
 .radarOutline {
     margin: 0;
-    height: 26em;
-    width: 26em;
+    height: 23em;
+    width: 23em;
     background: radial-gradient(circle at center, #ffffff, #353535);
     border-radius: 50%;
     border: solid 2px rgb(31, 31, 31);
@@ -22,7 +22,7 @@
     width: calc(8em + 1.5em);
     height: calc(8em + 1.5em);
     background: linear-gradient(90deg, transparent 49.75%, #dbedf3 49.75%, #dbedf3 50.25%, transparent 50.25%), linear-gradient(transparent 49.75%, #dbedf3 49.75%, #dbedf3 50.25%, transparent 50.25%), repeating-radial-gradient(transparent 0, transparent 0.95em, #dbedf3 0.95em, #dbedf3 1em), linear-gradient(black, black);
-    font-size: 40px;
+    font-size: 35px;
     position: relative;
     border-radius: 50%;
 }

@@ -2,7 +2,6 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import Helmet from 'preact-helmet';
-
 import Header from './header';
 
 // Code-splitting is automated for routes
@@ -121,20 +120,20 @@ export default class App extends Component {
 	render() {
 		return (
 			<div id="app">
-				<meta name="viewport" content="width=device-width" />
-				<noscript>
-					<h2>La ejecución de Javascript se encuentra deshabilitada</h2>
-				</noscript>
 				<Helmet
 					title="PWARadar"
-					noscript={[ { innerHTML: `<link rel="stylesheet" type="text/css" href="style.css" />` } ]}
 					link={[
 						{ rel: 'apple-touch-icon', href: '../assets/icons/apple-touch-icon.png' },
 						{ rel: 'icon', sizes: '192x192', href: '../assets/icons/android-chrome-192x192' }
 					]}
+					noscript={[{ innerHTML: `<link rel="stylesheet" type="text/css" href="style.css" />` }]}
 				/>
+				<meta name="viewport" content="width=device-width" />
+				<noscript>
+					<h2>Sin conexión</h2>
+				</noscript>
 				<Header />
-				<Router onChange={this.handleRoute}>
+				<Router>
 					<Home path="/" updatedUsers={this.state.updatedUsers} currentPosition={this.state.currentPosition} />
 				</Router>
 			</div>
