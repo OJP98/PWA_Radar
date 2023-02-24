@@ -13,7 +13,7 @@
     "apollo-fetch": "^0.7.0",
     "apollo-server": "^2.9.7",
     "graphql": "^14.5.8",
-    "sequelize": "^5.21.2",
+    "sequelize": "^6.29.0",
     "sequelize-cli": "^5.5.1",
     "sqlite3": "^4.1.0"
   }
